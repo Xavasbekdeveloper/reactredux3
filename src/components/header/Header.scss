@@ -1,0 +1,95 @@
+.header {
+  padding: 20px 0;
+  box-shadow: 0 0 1px 1px #0002;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  h1 {
+    font-size: 30px;
+    color: #7e7e7ea6;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #7e7e7ea6;
+    flex: 1;
+    height: 40px;
+    border-radius: 5px;
+
+    input {
+      flex: 1;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      padding-left: 20px;
+      color: #7e7e7ea6;
+    }
+
+    button {
+      height: 100%;
+      padding: 0 10px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      border-left: 1px solid #7e7e7ea6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      color: #7e7e7e;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #7e7e7ea6;
+  }
+
+  &__extra__link {
+    position: relative;
+    color: #7e7e7ea6;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    span {
+      position: absolute;
+      top: -2px;
+      right: -3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgb(59, 59, 59);
+      color: #fff;
+      padding: 1px 3px;
+      min-width: 16px;
+      border-radius: 20px;
+      font-size: 11px;
+    }
+  }
+}
