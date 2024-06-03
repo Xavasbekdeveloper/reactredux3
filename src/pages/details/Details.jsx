@@ -16,8 +16,6 @@ const Details = () => {
   const wishlistData = useSelector((state) => state.wishlist.value);
   const cartData = useSelector((state) => state.cart.value);
 
-  console.log(data);
-
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -25,12 +23,12 @@ const Details = () => {
   useEffect(() => {
     axios
       .get(`/products/${id}`)
-      .then((res) => setData(res.data.products))
+      .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, [id]);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div className="details__loading">Loading...</div>;
   }
 
   return (
@@ -44,8 +42,8 @@ const Details = () => {
             <h1>{data.title}</h1>
             <p>{data.brand}</p>
             <p>{data.description}</p>
-            <p>{data.price}</p>
-            <div className="details__bnt">
+            <p>${data.price}</p>
+            <div className="details__btns">
               <button onClick={() => dispatch(add(data))}>
                 add to cart
                 {cartData.some((el) => el.id === data.id) ? (
